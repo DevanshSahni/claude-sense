@@ -1,6 +1,16 @@
+import { useEffect } from 'react'
 import icon from './assets/icon.svg'
 
 function App() {
+
+  useEffect(()=>{
+    const getData = async()=>{
+      // @ts-ignore
+      const data = await window.electron.getTestData();
+      console.log("Received Data:", data);
+    }
+    getData();
+  }, [])
 
   return (
     <div style={{ width: '100%', margin: '0px', backgroundColor: '#0f222c', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
