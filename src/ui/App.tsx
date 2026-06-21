@@ -5,8 +5,7 @@ function App() {
 
   useEffect(()=>{
     const getData = async()=>{
-      // @ts-ignore
-      const data = await window.electron.getTestData();
+      const data = await window.electron.getSystemData();
       console.log("Received Data:", data);
     }
     getData();

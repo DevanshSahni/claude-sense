@@ -2,7 +2,7 @@ import fs from "node:fs";
 import os from "os";
 import osUtils from "os-utils";
 
-export function getSystemData() {
+export function getSystemData(): SystemData {
   const totalStorage = getStorageData().total;
   const cpuModel = os.cpus()[0].model;
   const totalMemoryGB = Math.floor(osUtils.totalmem() / 1024);
