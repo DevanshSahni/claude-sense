@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import icon from './assets/icon.svg'
+import icon from '../assets/icon.png'
 
 function App() {
 
