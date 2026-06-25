@@ -3,6 +3,7 @@ import { ipcHandle, isDev } from "./utils.js";
 import { getPreloadPath, getUIPath } from "./pathResolver.js";
 import { getSystemData } from "./resourceManager.js";
 import { createTray } from "./tray.js";
+import { createMenu } from "./menu.js";
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -20,7 +21,9 @@ function createWindow() {
     return getSystemData();
   });
 
-  createTray();
+  createTray(mainWindow);
+  
+  createMenu(mainWindow);
 
   handleCloseEvents(mainWindow);
 }
